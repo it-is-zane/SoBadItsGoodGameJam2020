@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Images/TileSimpleTileSet.png" type="Texture" id=1]
 [ext_resource path="res://Sound/SoBadItsGood.wav" type="AudioStream" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://Images/Cloud.png" type="Texture" id=4]
 [ext_resource path="res://RigidBodys/FreeBlock.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Spawner.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Portal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Tools/Spawner.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Tools/Portal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Player/PlayerControler.tscn" type="PackedScene" id=9]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 1, 2, 16, 2, 16, 16, 0, 16 )
@@ -179,6 +180,8 @@ range_z_min = 0
 range_z_max = 0
 shadow_enabled = true
 
+[node name="PlayerControler" parent="Player" instance=ExtResource( 9 )]
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 volume_db = -20.0
@@ -192,7 +195,7 @@ test = ExtResource( 5 )
 [node name="Spawner2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 0, -64 )
 test = ExtResource( 6 )
-time = 0.25
+time = 10.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
