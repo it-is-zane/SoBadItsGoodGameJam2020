@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Player/NPCControler_t001.gd" type="Script" id=1]
+
+[node name="NPCControler_t001" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="RightTop" type="RayCast2D" parent="."]
+position = Vector2( 0, -16 )
+enabled = true
+cast_to = Vector2( 128, 96 )
+collide_with_areas = true
+
+[node name="LeftTop" type="RayCast2D" parent="."]
+position = Vector2( 0, -16 )
+enabled = true
+cast_to = Vector2( -128, 96 )
+
+[node name="RightBottom" type="RayCast2D" parent="."]
+position = Vector2( 0, -16 )
+enabled = true
+cast_to = Vector2( 60, 96 )
+
+[node name="LeftBottom" type="RayCast2D" parent="."]
+position = Vector2( 0, -16 )
+enabled = true
+cast_to = Vector2( -60, 96 )
