@@ -15,23 +15,25 @@ func _ready():
 	Animator.set("parameters/NotIdle/blend_amount",0)
 
 
-func right():
+func right(speed = 50):
 	Animator.set("parameters/NotIdle/blend_amount",lerp(Animator.get("parameters/NotIdle/blend_amount"),1,0.1))
-	velocity.x = lerp(velocity.x,50,1)
-	get_node("0x72_DungeonTilesetII_v13").scale.x = 1
+	velocity.x = lerp(velocity.x,speed,0.1)
+	get_node("RotationHandler").scale.x = 1
 
-func left():
+func left(speed = 50):
 	Animator.set("parameters/NotIdle/blend_amount",lerp(Animator.get("parameters/NotIdle/blend_amount"),1,0.1))
-	velocity.x = lerp(velocity.x,-50,1)
-	get_node("0x72_DungeonTilesetII_v13").scale.x = -1
+	velocity.x = lerp(velocity.x,-speed,0.1)
+	get_node("RotationHandler").scale.x = -1
+
 
 func jump():
-	velocity.y = -60
-	Animator.set("parameters/Jump/active",true)
+	if is_on_floor():
+		velocity.y = -60
+		Animator.set("parameters/Jump/active",true)
 
 func idle():
-	Animator.set("parameters/NotIdle/blend_amount",lerp(Animator.get("parameters/NotIdle/blend_amount"),0,0.1))
-	velocity.x = lerp(velocity.x,0,1)
+	Animator.set("parameters/NotIdle/blend_amount",0)
+	velocity.x = lerp(velocity.x,0,0.25)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

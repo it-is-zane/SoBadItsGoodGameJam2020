@@ -18,8 +18,18 @@ _global_script_class_icons={
 config/name="SoBadItsGood"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=200
+window/size/height=100
+window/size/test_width=400
+window/size/test_height=200
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
 [rendering]
 
+quality/2d/use_pixel_snap=true
 threads/thread_model=2
 environment/default_clear_color=Color( 0.388235, 0.607843, 1, 1 )
 environment/default_environment="res://default_env.tres"
