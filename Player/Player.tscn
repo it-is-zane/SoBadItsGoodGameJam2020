@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Images/0x72_DungeonTilesetII_v1.3.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Images/CustomCharacter.png" type="Texture" id=3]
 [ext_resource path="res://Images/light.png" type="Texture" id=4]
+[ext_resource path="res://Images/1307539573.svg" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -11,28 +11,28 @@ length = 0.5
 loop = true
 step = 0.25
 tracks/0/type = "value"
-tracks/0/path = NodePath("RotationHandler/0x72_DungeonTilesetII_v13:frame_coords")
-tracks/0/interp = 0
+tracks/0/path = NodePath("RotationHandler/CustomCharacter:frame")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.25 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 26, 23 ), Vector2( 25, 23 ) ]
+"update": 1,
+"values": [ 3, 2 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("RotationHandler/CustomCharacter:frame")
+tracks/1/path = NodePath("RotationHandler/1307539573:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.25 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.001, 0.25, 0.251, 0.5, 0.501 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 3, 2 ]
+"values": [ Vector2( 3, -11 ), Vector2( 3, -10 ), Vector2( 3, -10 ), Vector2( 3, -9 ), Vector2( 3, -10 ), Vector2( 3, -9 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -40,7 +40,7 @@ resource_name = "Jump"
 length = 0.5
 step = 0.01
 tracks/0/type = "value"
-tracks/0/path = NodePath("RotationHandler/0x72_DungeonTilesetII_v13:frame_coords")
+tracks/0/path = NodePath("RotationHandler/CustomCharacter:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -49,26 +49,26 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.05, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 25, 23 ), Vector2( 23, 23 ), Vector2( 25, 23 ) ]
+"values": [ 2, 0, 2 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("RotationHandler/CustomCharacter:frame")
+tracks/1/path = NodePath("RotationHandler/1307539573:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.05, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 2, 0, 2 ]
+"times": PoolRealArray( 0, 0.03, 0.28, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 3, -10 ), Vector2( 3, -11 ), Vector2( 3, -10 ), Vector2( 3, -9 ) ]
 }
 
 [sub_resource type="Animation" id=3]
 loop = true
 step = 0.2
 tracks/0/type = "value"
-tracks/0/path = NodePath("RotationHandler/0x72_DungeonTilesetII_v13:frame_coords")
+tracks/0/path = NodePath("RotationHandler/CustomCharacter:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -77,19 +77,19 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.8, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 26, 23 ), Vector2( 30, 23 ), Vector2( 30, 23 ) ]
+"values": [ 3, 7, 7 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("RotationHandler/CustomCharacter:frame")
+tracks/1/path = NodePath("RotationHandler/1307539573:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.8, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 3, 7, 7 ]
+"times": PoolRealArray( 0, 0.001, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 3, -9 ), Vector2( 3, -10 ), Vector2( 3, -12 ), Vector2( 3, -13 ), Vector2( 3, -12 ), Vector2( 3, -11 ), Vector2( 3, -11 ) ]
 }
 
 [sub_resource type="CircleShape2D" id=4]
@@ -113,7 +113,7 @@ animation = "Walk"
 [sub_resource type="AnimationNodeTimeScale" id=11]
 
 [sub_resource type="AnimationNodeBlendTree" id=12]
-graph_offset = Vector2( -143, -105 )
+graph_offset = Vector2( 50, -159 )
 nodes/Animation/node = SubResource( 7 )
 nodes/Animation/position = Vector2( -80, -60 )
 "nodes/Animation 3/node" = SubResource( 5 )
@@ -137,25 +137,25 @@ script = ExtResource( 2 )
 [node name="RotationHandler" type="Node2D" parent="."]
 position = Vector2( 0, 3 )
 
-[node name="0x72_DungeonTilesetII_v13" type="Sprite" parent="RotationHandler"]
+[node name="1307539573" type="Sprite" parent="RotationHandler"]
 visible = false
-light_mask = 0
-position = Vector2( 0, -3 )
-texture = ExtResource( 1 )
-vframes = 32
-hframes = 32
-frame = 762
+light_mask = 2
+position = Vector2( 3, -12 )
+texture = ExtResource( 5 )
 
-[node name="Light2D" type="Light2D" parent="RotationHandler/0x72_DungeonTilesetII_v13"]
+[node name="Light2D" type="Light2D" parent="RotationHandler"]
+visible = false
+position = Vector2( 0, -3 )
 texture = ExtResource( 4 )
 texture_scale = 0.1
 shadow_enabled = true
 
 [node name="CustomCharacter" type="Sprite" parent="RotationHandler"]
+light_mask = 2
 position = Vector2( 0, -11 )
 texture = ExtResource( 3 )
 hframes = 8
-frame = 3
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 2.0
@@ -175,3 +175,7 @@ parameters/Jump/active = false
 parameters/NotIdle/blend_amount = 1.0
 parameters/OneShot/active = false
 parameters/TimeScale/scale = 1.5
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 12 )
