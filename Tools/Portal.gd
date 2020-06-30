@@ -19,10 +19,9 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	if ready:
+	if ready and not (body is RigidBody2D):
 		if not Desision:
-			if not (body is RigidBody2D):
-				body.global_position = get_node(Destination).global_position
+			body.global_position = get_node(Destination).global_position
 		else:
 			get_tree().change_scene(NewScene)
 

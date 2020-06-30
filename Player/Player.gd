@@ -23,7 +23,6 @@ func left(speed = 50):
 	Animator.set("parameters/NotIdle/blend_amount",lerp(Animator.get("parameters/NotIdle/blend_amount"),1,0.1))
 	velocity.x = lerp(velocity.x,-speed,0.1)
 	get_node("RotationHandler").scale.x = -1
-	print("reached")
 
 
 func jump():
